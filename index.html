@@ -3,46 +3,364 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afe Ayo Sunday- A fullStack Junior Engineer</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Afe Ayo Sunday Back-end Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 25%;
+            background: linear-gradient(135deg, #333333, #1f1f1f);
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            animation: slideInLeft 0.5s ease-in-out;
+        }
+
+        .sidebar h3, .sidebar ul li {
+            color: #ffbb00;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar ul li:hover {
+            color: #fff;
+            transform: translateX(10px);
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffbb00;
+            color: #1f1f1f;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: #333333;
+            color: #ffbb00;
+        }
+
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
+
+        .main-header {
+            background-color: #333333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .services {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-item i {
+            font-size: 2rem;
+            color: #ffbb00;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 20px;
+            text-align: center;
+            background-color: #333333;
+        }
+
+        .portfolio h3 {
+            margin-bottom: 20px;
+            color: #ffbb00;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer.social-links {
+        text-align: center;
+        padding: 20px;
+        background-color:  #121212;
+    }
+
+    footer.social-links ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    footer.social-links ul li {
+        display: inline-block;
+    }
+
+    footer.social-links ul li a {
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+        
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        a{
+            color:#ffbb00;
+            list-style: none;
+        }
+
+        
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding-bottom: 40px;
+            }
+
+            .main-content {
+                width: 100%;
+            }
+
+            .service-grid, .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .service-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+</style>
 <body>
-    <header>
-        <nav>
-            <div class="logo">A2s</div>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="intro">
-            <div class="intro-content">
-                <div class="hello">Hello!</div>
-                <h1>I'm <span class="highlight">Afe Ayo</span>,<br>A fullStack Junior Engineer</h1>
-                <div class="testimonial">
-                    <p>Afe Ayo's Exceptional work ensure our organisation success. Highly Recommended</p>
-                </div>
-                <div class="actions">
-                    <a href="#" class="btn portfolio">Portfolio</a>
-                    <a href="#" class="btn hire">Hire me</a>
-                </div>
+
+    <aside class="sidebar">
+        <div>
+            <div class="languages">
+                <h3>Education & Certification</h3>
+                <ul>
+                    <li>B.Sc in Mass Communication, KSU</li>
+                    <li>AltSchool Africa School Engineering</li>
+                    <li>International School of Management</li>
+                    <li>Asstas Art and Media Academy </li>
+                </ul>
             </div>
-            <div class="intro-image">
-                <div class="image-wrapper">
-                    <img src="IMG_20230912_212346_964-removebg-preview.png" alt="Jenny">
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML <span></li>
+                    <li>CSS <span></li>
+                    <li>JavaScript <span></li>
+                    <li>EJs </span></li>
+                    <li>Node.js</span></li>
+                    <li>Express</span></li>
+                    <li>MongoDB</span></li>
+                    <li>SQL</span></li>
+                    <li>WordPress <span></li>
+                </ul>
+            </div>
+           <!-- <div class="extra-skills">
+                <h3>Extra Skills</h3>
+                <ul>
+                    <li>Bootstrap, Materialize</li>
+                    <li>Sass, Less</li>
+                    <li>Git, Webpack, Gulp</li>
+                </ul>-->
+                <a href="AFE AYO SUNDAY CV (4).pdf" download="AFE AYO SUNDAYCV (4).pdf" class="btn-download">Download CV</a>
+    
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="main-header">
+            <div class="profile">
+                <img src="IMG_20230912_212346_964-removebg-preview.png" alt="Profile Picture">
+                <h1>AFE AYO SUNDAY</h1>
+                <h2>Back-end Developer</h2>
+            </div>
+        </header>
+
+        <section class="services">
+            <h3>My Services</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-code"></i>
+                    <h4>Back-end Developer</h4>
+                    <p>Node.js and JavaScript/TypeScript</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Web Application</h4>
+                    <p>Responsive Web App</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-headphones"></i>
+                    <h4>Journalist</h4>
+                    <p>OAP</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-ad"></i>
+                    <h4>Advertising</h4>
+                    <p>Campaign Creation</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-gamepad"></i>
+                    <h4>Data Analyst</h4>
+                    <p>Excel,PowerBI,SQL,Python </p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-camera"></i>
+                    <h4>Photography</h4>
+                    <p>Product, Portrait Photography, Video Editing</p>
                 </div>
             </div>
         </section>
-        <aside class="experience">
-            <div class="stars">★★★★★</div>
-            <div class="years">2 Years Experience</div>
-        </aside>
-    </main>
+
+        
+        <section class="portfolio">
+            <h3>My Portfolio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="web 1.png" alt="Portfolio 1">
+                    <h4>Node.js/Ejs</h4>
+                    <p>User Registration/Voting web App Api</p>
+                    <a href="https://eventushersconference.com.ng/">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="web 2.png" alt="Portfolio 2">
+                    <h4>Node.js, Express/Ejs</h4>
+                    <p>Birthday Reminder App</p>
+                    <a href="https://birthday-reminder-app-g769.onrender.com/">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="web3.png" alt="Portfolio 3">
+                    <h4>Node.js, Express, MongoDB/Ejs</h4>
+                    <p>An Event managment Web App API</p>
+                    <a href="https://eventful-altschool-capstone-project.onrender.com/">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="web 4.png" alt="Portfolio 4">
+                    <h4>Html, CSS, Js</h4>
+                    <p>Unit Converter web App</p>
+                    <a href="https://unitconverter-two.vercel.app/">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="web 5.png" alt="Portfolio 5">
+                    <h4>Node.js, Redis/Ejs</h4>
+                    <p>Chat bot Api</p>
+                    <a href="https://restaurant-chatbot-1-od2h.onrender.com/">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="web 6.png" alt="Portfolio 6">
+                    <h4>Wordpress</h4>
+                    <p>An event web App</p>
+                    <a href="https://smylnstribe.com.ng/">View Project</a>
+                </div>
+            </div>
+        </section>
+
+    <footer class="social-links">
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fab fa-github"></i></a></li> 
+            <!--<li><a href="#"><i class="fab fa-youtube"></i></a></li>-->
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
